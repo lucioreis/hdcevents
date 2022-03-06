@@ -192,6 +192,11 @@ header {
 #items-list li {
   display: flex;
 }
+
+.img-preview {
+  width: 100px;
+  margin-top: 20px;
+}
 /* footer */
 footer {
   text-align: center;

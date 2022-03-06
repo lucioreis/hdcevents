@@ -28,14 +28,28 @@
             <a href="/" class="nav-link"> Eventos </a>
           </li>
           <li class="nav-item">
-<a href="/events/create" class="nav-link"> Criar Eventos </a>
+            <a href="/events/create" class="nav-link"> Criar Eventos </a>
           </li>
+          @guest
           <li class="nav-item">
             <a href="/login" class="nav-link"> Entrar </a>
           </li>
           <li class="nav-item">
             <a href="/register" class="nav-link"> Cadastrar </a>
           </li>
+          @endguest
+          @auth
+          <li class='nav-item'>
+            <a href='/dashboard' class='nav-link'> My Events </a>
+          </li>
+          <li class="nav-item">
+            <form action='/logout' method="POST">
+              @csrf
+              <a href="/logout" class='nav-link' onclick="event.preventDefault();
+                  this.closest('form').submit()"> Log Out </a>
+            </form>
+          </li>
+          @endauth
         </ul>
       </div>
     </nav>
